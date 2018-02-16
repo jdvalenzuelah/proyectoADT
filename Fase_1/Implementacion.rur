@@ -1,0 +1,28 @@
+# Vuelta hacia la derecha
+def turn_right():
+    repeat(turn_left, 3)
+
+# Vuelta de 180 grados
+def turn_around():
+    repeat(turn_left, 2)
+    
+# Funcion que implementa el algoritmo
+def solve():
+    # Si el frente esta libre y hay una pared a la derecha
+    if front_is_clear() and not right_is_clear():
+        move() # Movemos hacia el frente
+    # Si en la derecha no hay pared
+    elif right_is_clear():
+        turn_right() # Cruzamos a la derecha
+        move() # Movemos hacia el frente
+    # Si llego a un callwjon sin salida
+    elif not front_is_clear() and not left_is_clear() and not right_is_clear():
+        turn_around() # Nos damos la vuelta
+    # Si solo hay espacio a la izquierda
+    elif not front_is_clear() and left_is_clear():
+        turn_left() # Cruzamos a la derecha
+
+# Prueba de resolucion
+repeat(solve, 400)
+
+turn_off()
