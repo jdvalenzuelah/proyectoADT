@@ -20,7 +20,7 @@ def solve():
         turn_around() # Nos damos la vuelta
     # Si solo hay espacio a la izquierda
     elif not front_is_clear() and left_is_clear():
-        turn_left() # Cruzamos a la derecha
+        turn_left() # Cruzamos a la izquierda
 
 # Prueba de resolucion
 repeat(solve, 400)
