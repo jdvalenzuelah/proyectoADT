@@ -10,13 +10,12 @@
 void move()
 {
   drive_ramp(128,128);
-}  S
+}
 
 // Cruzar hacia la derecha
 void turn_right()
 {
   drive_goto(26,-25);
-  
 }
 
 // Cruzar hacia la izquierda
@@ -40,29 +39,16 @@ int main()
   while(1)
   {
     // Si no hay nada al frente nos movemos
-    if(ping_cm(10) > 18){
+    if(ping_cm(8) > 18){
       move();
     }      
     
     // Si hay algo por delante paramos y cruzamos a la derecha
-    if(ping_cm(10) < 18){
+    if(ping_cm(8) < 18){
       drive_ramp(0,0);
-      tunr_rigth();
+      turn_right();
     }
-    
-    // Si depues de girar hay algo por delante, cruzamos 180 grados
-    if(ping_cm(10) < 18){
-      drive_ramp(0,0);
-      oneEturn();
-    }  
-    
-    // Si al girar hacia el otro lado aun hay algo, cruzamos a la izquierda
-    if(ping_cm(10) < 18){
-      turn_left();
-    }   
                     
   }  
   
 }
-
-
