@@ -15,7 +15,7 @@ void move()
 // Cruzar hacia la derecha
 void turn_right()
 {
-  drive_goto(26,-25);
+  drive_goto(26,-25);s
   
 }
 
